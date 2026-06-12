@@ -24,7 +24,7 @@ header img {
     margin: 16px 10px;
 }
 
-header ul {
+header > ul {
     display: flex;
     align-items: center;
     gap: 20px;
@@ -60,6 +60,11 @@ header > li svg {
 
 header .dropdown-menu {
     z-index: 1000;
+}
+
+header .dropdown-menu li {
+    display: block;
+    height: auto;
 }
 
 .carousel-content {
@@ -381,7 +386,7 @@ li {
         gap: 12px;
     }
 
-    header ul {
+    header > ul {
         gap: 14px;
     }
 
@@ -432,7 +437,7 @@ li {
         padding: 10px 0;
     }
 
-    header ul {
+    header > ul {
         width: 100%;
         justify-content: center;
         flex-wrap: wrap;
@@ -513,11 +518,11 @@ li {
         margin: 10px 0;
     }
 
-    header ul li:not(:first-child) {
+    header > ul > li:not(:first-child) {
         display: none;
     }
 
-    header ul {
+    header > ul {
         width: auto;
         margin-right: 0;
         flex: 1 1 auto;
@@ -561,8 +566,33 @@ li {
     }
 
     header .dropdown-menu {
+        display: none;
+        position: absolute !important;
         left: 50% !important;
+        top: 100% !important;
         transform: translateX(-50%) !important;
+        min-width: 170px;
+        height: auto;
+        max-height: none;
+        overflow: visible;
+        margin-top: 6px;
+    }
+
+    header .dropdown-menu.show {
+        display: block;
+    }
+
+    header .dropdown-menu li {
+        display: block !important;
+        width: 100%;
+        height: auto;
+    }
+
+    header .dropdown-menu .dropdown-item {
+        display: block;
+        width: 100%;
+        padding: 8px 16px;
+        white-space: nowrap;
     }
 
     .carousel-item img {
